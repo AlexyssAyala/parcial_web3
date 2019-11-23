@@ -1,0 +1,70 @@
+<% include partials/_header %>
+
+<div class="container">
+
+  <div class="col">
+    <!--FORM-->
+    <div class="mx-auto text-cente" style="width: 600px;">
+      <div class="card">
+        <div class="card-body">
+          <form action="/add" method="post">
+            <div class="form-group">
+              <input class="form-control" type="text" name="marca" placeholder="marca">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="precio" placeholder="precio">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="material" placeholder="material">
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="text" name="tipo" placeholder="tipo">
+            </div>
+            <button class="btn btn-primary" type="submit">
+              Agregar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIST -->
+    <div class="mx-auto text-cente">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>N° de Cartera</th>
+            <th>marca</th>
+            <th>precio</th>
+            <th>material</th>
+            <th>tipo</th>
+            <th>acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i < tasks.length; i++) { %>
+            <tr>
+              <td><%= i + 1%></td>
+              <td><strong><%= tasks[i].marca %></strong></td>
+              <td><%= tasks[i].precio %></td>
+              <td><%= tasks[i].material %></td>
+              <td><%= tasks[i].tipo %></td>
+              <td>
+                <a href="/delete/<%= tasks[i]._id %>"
+                  class="btn btn-danger">
+                  Eliminar
+                </a>
+                <a href="/edit/<%= tasks[i]._id %>" class="btn btn-info">
+                  Editar
+                </a>
+              </td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>
+
