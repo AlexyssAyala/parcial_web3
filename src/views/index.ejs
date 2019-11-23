@@ -9,16 +9,21 @@
         <div class="card-body">
           <form action="/add" method="post">
             <div class="form-group">
-              <input class="form-control" type="text" name="marca" placeholder="marca">
+              <input class="form-control" type="text" name="marca" placeholder="marca" required>
             </div>
             <div class="form-group">
-              <input class="form-control" type="text" name="precio" placeholder="precio">
+              <input class="form-control" type="number" name="precio" placeholder="precio" required>
             </div>
             <div class="form-group">
-              <input class="form-control" type="text" name="material" placeholder="material">
+              <input class="form-control" type="text" name="material" placeholder="material" required>
             </div>
             <div class="form-group">
-              <input class="form-control" type="text" name="tipo" placeholder="tipo">
+              <select name="tipo" id="tipo" >
+                <option value="bolsa de mano">bolsa de mano</option>
+                <option value="bolsa de mano">billetera</option>
+                <option value="bolsa de mano">cartera grande</option>
+                <option value="bolsa de mano">cartera pequeña</option>
+              </select>
             </div>
             <button class="btn btn-primary" type="submit">
               Agregar
